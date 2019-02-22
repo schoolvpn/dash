@@ -1,0 +1,110 @@
+.data {
+    margin-top: 50px
+  }
+  
+.help-block {
+  color: white
+}
+
+.alert {
+  color: #e73c7e;
+  font-family: bigjohn;
+  background: #212121;
+  border-color: #e73c7e
+}
+
+.AppLogin {
+  color: #E73C7E;
+  position : absolute;    
+  width    : 1000px;
+  left     : 20%;
+  top      : 20%;
+}
+
+.AppRegister {
+  color: #E73C7E;
+  position : absolute;    
+  width    : 1000px;
+  left     : 20%;
+  top      : 30%;
+}
+
+.App {
+  color: #E73C7E;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 44px;
+  font-family: 'bigjohn';
+}
+
+label {
+  font-size: 15px;
+  font-family: 'bigjohn' !important;
+  color: #E73C7E
+}
+
+h2 {
+  color: #E73C7E;
+  text-align: center;
+  font-family: 'bigjohn' !important;
+  font-size: 30px !important;
+}
+
+p {
+  font-size: 20px;
+  font-family: 'slimjoe';
+}
+
+.form-control {
+  background: transparent;
+  border-color: #E73C7E;
+  color: white
+}
+
+.button {
+  justify-content: center;
+  display: flex;
+}
+
+.loginbtn {
+  text-align: center;
+  min-width: 200px;
+  font-family: 'bigjohn';
+  font-size: 20px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #E73C7E;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 1px solid #E73C7E;
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.buttonalt {
+  text-align: center;
+  font-family: 'bigjohn';
+  min-width: 200px;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #212121;
+  background-color: #E73C7E;
+  border-radius: 6px;
+  border: 1px solid #E73C7E;
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.buttonalt:hover {
+  color: #212121
+}

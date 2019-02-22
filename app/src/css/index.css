@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'slimjoe'; /*a name to be used later*/
+  src: url('./Slim\ Joe.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'bigjohn'; /*a name to be used later*/
+  src: url('./BIG\ JOHN.otf'); /*URL to font*/
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #212121
+}
