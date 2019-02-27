@@ -6,27 +6,29 @@
   color: white
 }
 
+.alert-success {
+  color: #212121;
+  border-color: #00FF00;
+  background:  #00FF00;
+}
+
+.alert-danger {
+  color: #212121;
+  border-color: red;
+  background: red;
+}
+
 .alert {
-  color: #e73c7e;
   font-family: bigjohn;
-  background: #212121;
-  border-color: #e73c7e
 }
 
 .AppLogin {
   color: #E73C7E;
-  position : absolute;    
-  width    : 1000px;
-  left     : 20%;
-  top      : 20%;
+  top: 50%;
 }
 
 .AppRegister {
   color: #E73C7E;
-  position : absolute;    
-  width    : 1000px;
-  left     : 20%;
-  top      : 30%;
 }
 
 .App {

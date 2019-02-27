@@ -17,7 +17,8 @@ class App extends Component {
       password: '',
       submitted: false,
       loading: false,
-      error: ''
+      error: '',
+      success: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -44,14 +45,9 @@ class App extends Component {
     userService.register(firstname, lastname, email, password)
       .then(
         data => {
-          this.setState({ error: false})
+          this.setState({ error: false })
+          this.setState({ success: true })
           console.log(data)
-          // userService.me()
-          //   .then( data =>{
-          //       const { from } = this.props.location.state || { from: { pathname: "/login" } };
-          //       this.props.history.push(from);
-          //     }
-          //   )
           const { from } = this.props.location.state || { from: { pathname: "/login" } };
           this.props.history.push(from);
         },
@@ -60,10 +56,15 @@ class App extends Component {
   }
 
   render() {
-    const { firstname, lastname, email, password, submitted, error } = this.state;
+    const { firstname, lastname, email, password, submitted, error, success } = this.state;
     return (
       <div className="AppLogin">
+        <br/>
+        <br/>
         <div className="col-md-6 col-md-offset-3">
+          {success &&
+            <div className={'alert alert-success'}>Register Success</div>
+          }
           {error &&
             <div className={'alert alert-danger'}>{error}</div>
           }
