@@ -49,6 +49,7 @@ function me() {
         .then(
             response => {
                 localStorage.setItem('Account', JSON.stringify(response.data))
+                return response.data
             }
         )
 }

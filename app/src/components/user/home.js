@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import '../css/reverselookup.css'
-import Header from "../header";
+import Header from "../../header";
 
 
 class Posts extends Component {
@@ -10,20 +10,30 @@ class Posts extends Component {
     this.state = {
       firstname: account.firstname,
       lastname: account.lastname,
-      email: '',
-      role: '',
-      id: ''
+      email: account.email,
+      role: account.role,
+      id: account._id
     };
   }
 
 
 
   render() {
-    const { firstname, lastname } = this.state;
+    const { firstname, lastname, role, email, id } = this.state;
     return (
       <div className='App'>
         <Header/>
         <h1>Welcome Back {firstname} {lastname}</h1>
+        <h2>This is a User Page</h2>
+        <p>
+          Here is some Account info...
+          <br/>
+          Role: {role}
+          <br/>
+          ID: {id}
+          <br/>
+          Email: {email}
+        </p>
         {/* <h1>Reverse Lookup</h1>
         <div>
           

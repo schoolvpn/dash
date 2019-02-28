@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   handleSubmit(e) {
-    console.log(e)
     e.preventDefault();
 
     this.setState({ submitted: true });
@@ -48,9 +47,21 @@ class App extends Component {
           this.setState({ success: true })
           console.log(data)
           userService.me()
-            .then( data =>{
-                const { from } = this.props.location.state || { from: { pathname: "/" } };
-                this.props.history.push(from);
+            .then( 
+              data =>{
+                console.log(data)
+                if (data.role === 'user') {
+                  const { from } = this.props.location.state || { from: { pathname: "/user/dashboard" } };
+                  this.props.history.push(from);
+                }
+                else if (data.role === 'admin') {
+                  const { from } = this.props.location.state || { from: { pathname: "/admin/dashboard" } };
+                  this.props.history.push(from);
+                }
+                else {
+                  const { from } = this.props.location.state || { from: { pathname: "/login" } };
+                  this.props.history.push(from);
+                }
               }
             )
         },

@@ -56,8 +56,9 @@ h2 {
 }
 
 p {
+  text-align: center;
   font-size: 20px;
-  font-family: 'slimjoe';
+  font-family: 'bigjohn';
 }
 
 .form-control {
