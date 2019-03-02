@@ -65,7 +65,7 @@ class App extends Component {
               }
             )
         },
-        error => this.setState({ error, loading: false })      
+        error => {this.setState({ error, loading: false })}   
       )
   }
 
