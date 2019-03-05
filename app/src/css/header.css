@@ -81,3 +81,27 @@ a:hover {
     color: #282c34;
     text-decoration: none;
 }
+
+.dropdown {
+    min-width: 100px;
+}
+
+.drop-item {
+    text-align: center;
+    position: relative;
+    color: #212121;
+    font-family: 'bigjohn';
+    padding-top: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    float: left;
+    background: transparent;
+    border: transparent;
+}
+
+.dropdown-menu {
+    background-color: #E73C7E;
+    border-radius: 0px;
+    min-width: 100px;
+}

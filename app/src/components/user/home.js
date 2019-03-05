@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import '../css/reverselookup.css'
-import Header from "../../header";
+import Userheader from "./userheader";
 
 
-class Posts extends Component {
+class Userhome extends Component {
   constructor(props) {
     super(props);
     var account = JSON.parse(localStorage.getItem("Account"))
@@ -22,7 +22,7 @@ class Posts extends Component {
     const { firstname, lastname, role, email, id } = this.state;
     return (
       <div className='App'>
-        <Header/>
+        <Userheader/>
         <h1>Welcome Back {firstname} {lastname}</h1>
         <h2>This is a User Page</h2>
         <p>
@@ -39,4 +39,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default Userhome;

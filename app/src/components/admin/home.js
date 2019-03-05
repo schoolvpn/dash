@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import '../css/reverselookup.css'
-import Header from "../../header";
+import Adminheader from "./admminheader";
 
 
 class Posts extends Component {
@@ -22,7 +22,7 @@ class Posts extends Component {
     const { firstname, lastname, email, role, id } = this.state;
     return (
       <div className='App'>
-        <Header/>
+        <Adminheader/>
         <h1>Welcome Back {firstname} {lastname}</h1>
         <h2>This is a Admin Page</h2>
         <p>

@@ -6,7 +6,8 @@ export const userService = {
     me,
     logout,
     register,
-    adminusers
+    adminusers,
+    useraccountedit
     // logout,
     // getAll
 };
@@ -59,12 +60,26 @@ function adminusers() {
         return response.data
       }
     )
+    .catch(error => {
+      return Promise.reject(error.response.data.message);
+    });
+}
+
+function useraccountedit(firstname, lastname, picture) {
+  return axios.put('https://api.schoolvpn.ca/user/me', {firstname: firstname, lastname: lastname, picture: picture}, { headers: {Authorization: `Bearer ${localStorage.getItem('Authorization')}`}, })
+    .then(
+      response => {
+        return response.data
+      }
+    )
 }
 
 function logout() {
   localStorage.removeItem('Account');
   localStorage.removeItem('Authorization');
 }
+
+
 
 // function handleResponse(response) {
 //     return response.text().then(text => {
