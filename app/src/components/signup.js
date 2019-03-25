@@ -72,21 +72,33 @@ class SignUp extends Component {
                       <label className="SignLabel" for="exampleInputEmail1">Firstname:</label>
                       {/* <input type="firstname" class="form-control" id="firstname" placeholder=""/> */}
                       <input type="text" className="form-control" name="firstname" value={firstname} onChange={this.handleChange}/>
+                      {submitted && !firstname &&
+                        <div className="help-block">Firstname is required</div>
+                      }
                   </div>
                   <div className="form-group">
                       <label className="SignLabel" for="exampleInputPassword1">Lastname:</label>
                       {/* <input type="lastname" class="form-control" id="lastname" placeholder=""/> */}
                       <input type="text" className="form-control" name="lastname" value={lastname} onChange={this.handleChange}/>
+                      {submitted && !lastname &&
+                        <div className="help-block">Lastname is required</div>
+                      }
                   </div>
                   <div className="form-group">
                       <label className="SignLabel" for="exampleInputEmail1">Email:</label>
                       {/* <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""/> */}
                       <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange}/>
+                      {submitted && !email &&
+                        <div className="help-block">Email is required</div>
+                      }
                   </div>
                   <div className="form-group">
                       <label className="SignLabel" for="exampleInputPassword1">Password:</label>
                       {/* <input type="password" class="form-control" id="exampleInputPassword1" placeholder=""/> */}
                       <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange}/>
+                      {submitted && !password &&
+                        <div className="help-block">Password is required</div>
+                      }
                   </div>
                   <div className="SignDivButton">
                       <button type="submit" className="btn btn-primary SignButton">Register</button>
