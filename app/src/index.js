@@ -4,8 +4,8 @@ import './css/index.css';
 import {BrowserRouter as Router}  from 'react-router-dom';
 import ReactRouter from './router/router';
 
-ReactDOM.render(<Router>
-
+ReactDOM.render(
+<Router>
     <ReactRouter/>
 </Router>
     ,

@@ -4,7 +4,7 @@ import '../../css/header.css';
 // import { userService } from './services/user.service';
 
 
-class Adminheader extends Component {
+class AdminHeader extends Component {
 
   render() {
     return (
@@ -14,7 +14,7 @@ class Adminheader extends Component {
               Home
             </NavLink>
             
-            <NavLink className="nav-item" to="/login">
+            <NavLink className="nav-item" to="/signin">
               Logout
             </NavLink>
 
@@ -28,4 +28,4 @@ class Adminheader extends Component {
   }
 }
 
-export default Adminheader;
+export default AdminHeader;

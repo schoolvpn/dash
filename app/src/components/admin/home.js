@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Adminheader from "./admminheader";
 
 
-class Posts extends Component {
+class AdminHome extends Component {
   constructor(props) {
     super(props);
     var account = JSON.parse(localStorage.getItem("Account"))
@@ -39,4 +39,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default AdminHome;

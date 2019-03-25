@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { userService } from '../services/user.service';
 // import axios from 'axios'
-import '../css/login.css'
+import '../css/main.css'
 
-class App extends Component {
+class SignIn extends Component {
   constructor () {
     super()
 
@@ -72,8 +72,50 @@ class App extends Component {
   render() {
     const { email, password, submitted, error, success } = this.state;
     return (
-      <div className="AppLogin">
-        <br/>
+      <div className="AppSign">
+        <div className="row SignMain">
+          <div className="col SignInLeft">
+              {success &&
+                <div className={'alert alert-success'}>Login Success</div>
+              }
+              {error &&
+                <div className={'alert alert-danger'}>{error}</div>
+              }
+              <form onSubmit={this.handleSubmit}>
+                  <h2 className="SignPageTitle">Sign In</h2>
+                  <div className="form-group">
+                      <label className="SignLabel" for="exampleInputEmail1">Email:</label>
+                      {/* <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""/> */}
+                      <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange}/>
+                      {submitted && !email &&
+                        <div className="help-block">Email is required</div>
+                      }
+                  </div>
+                  <div className="form-group">
+                      <label className="SignLabel" for="exampleInputPassword1">Password:</label>
+                      <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange}/>
+                      {submitted && !password &&
+                        <div className="help-block">Password is required</div>
+                      }
+                      {/* <input type="password" className="form-control" id="exampleInputPassword1" placeholder=""/> */}
+                  </div>
+                  <div className="SignDivButton">
+                    <button type="submit" className="btn btn-primary SignButton">Login</button>
+                  </div>
+                  <small className="SignBottomSmall">
+                      Dont Have a Account? 
+                      <Link className="SignLink" to="/signup">Register</Link>
+                      Here.
+                  </small>
+              </form>
+          </div>
+          <div className="col SignInRight">
+              <h1 className="SignMainTitle">
+                  iNcizzle Inc.
+              </h1>
+          </div>
+        </div>
+        {/* <br/>
         <br/>
         <div className="col-md-6 col-md-offset-3 test">
           {success &&
@@ -106,10 +148,10 @@ class App extends Component {
             <div className='button'>
               <Link className="buttonalt" to="/signup">Register</Link>
             </div>
-        </div>
+        </div> */}
       </div>
     );
   }
 }
 
-export default App;
+export default SignIn;

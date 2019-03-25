@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { userService } from '../../services/user.service';
 import Header from "./admminheader";
 
-class Users extends Component {
+class AdminUsers extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,4 +66,4 @@ class Users extends Component {
   }
 }
 
-export default Users;
+export default AdminUsers;

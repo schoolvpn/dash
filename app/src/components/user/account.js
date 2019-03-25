@@ -4,7 +4,7 @@ import Userheader from "./userheader";
 import { userService } from '../../services/user.service';
 
 
-class Userhome extends Component {
+class UserAccount extends Component {
     constructor(props) {
         super(props);
         // var account = JSON.parse(localStorage.getItem("Account"))
@@ -98,4 +98,4 @@ class Userhome extends Component {
     }
 }
 
-export default Userhome;
+export default UserAccount;

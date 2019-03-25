@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect, } from "react-router-dom";
-import login from "../components/login";
+import signin from "../components/signin";
 import useraccount from "../components/user/account"
 import userhome from "../components/user/home";
 import adminhome from "../components/admin/home";
@@ -15,8 +15,8 @@ class ReactRouter extends React.Component {
     return (
       <React.Fragment>
         <Switch>
-          <Redirect exact from='/' to='/login'/>
-          <Route exact path="/login" component={login}/>
+          <Redirect exact from='/' to='/signin'/>
+          <Route exact path="/signin" component={signin}/>
           <PrivateRoute exact path="/user/dashboard" component={userhome}/>
           <PrivateRoute exact path="/admin/dashboard" component={adminhome}/>
           <PrivateRoute exact path="/admin/users" component={adminusers}/>

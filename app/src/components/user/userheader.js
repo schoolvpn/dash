@@ -4,7 +4,7 @@ import '../../css/header.css';
 // import { userService } from './services/user.service';
 
 
-class Userheader extends Component {
+class UserHeader extends Component {
   constructor() {
     super()
     var account = JSON.parse(localStorage.getItem("Account"))
@@ -32,7 +32,7 @@ class Userheader extends Component {
               <NavLink className="drop-item" to="/user/profile">
                 Profile
               </NavLink>
-              <NavLink className="drop-item" to="/login">
+              <NavLink className="drop-item" to="/signin">
                 Logout
               </NavLink>
             </div>
@@ -43,4 +43,4 @@ class Userheader extends Component {
   }
 }
 
-export default Userheader;
+export default UserHeader;
