@@ -48,7 +48,7 @@ class SignUp extends Component {
           this.setState({ error: false })
           this.setState({ success: true })
           console.log(data)
-          const { from } = this.props.location.state || { from: { pathname: "/login" } };
+          const { from } = this.props.location.state || { from: { pathname: "/signin" } };
           this.props.history.push(from);
         },
         error => this.setState({ error, loading: false })      
