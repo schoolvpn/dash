@@ -127,8 +127,16 @@ input {
   width: 500px !important;
 }
 
+@-webkit-keyframes autofill {
+  to {
+      color: #E73C7E;
+      background: transparent;
+  }
+}
+
 input:-webkit-autofill {
-  -webkit-text-fill-color: #212121 !important;
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
 }
 
 .help-block {
@@ -136,6 +144,24 @@ input:-webkit-autofill {
   color: white;
   font-family: slimjoe;
   font-size: 10px
+}
+
+.alert {
+  text-align: center;
+}
+
+.alert-danger {
+  background: #E73C7E;
+  color: #212121;
+  border-color: #E73C7E;
+  font-family: bigjohn;
+}
+
+.alert-success {
+  background: #3ce7a5;
+  color: #212121;
+  border-color: #3ce7a5;
+  font-family: bigjohn;
 }
 
 /* 

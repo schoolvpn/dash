@@ -56,7 +56,7 @@ class SignUp extends Component {
   }
 
   render() {
-    const { firstname, lastname, email, password, submitted, error, success } = this.state;
+    const { firstname, lastname, email, password, submitted, error, success, loading } = this.state;
     return (
       <div className="AppSign">
         <div className="row SignMain">
@@ -67,6 +67,12 @@ class SignUp extends Component {
           </div>
           <div className="col SignUpRight">
               <form onSubmit={this.handleSubmit}>
+                  {success &&
+                    <div className={'alert alert-success'}>Login Success</div>
+                  }
+                  {error &&
+                    <div className={'alert alert-danger'}>{error}</div>
+                  }
                   <h2 className="SignPageTitle">Sign Up</h2>
                   <div className="form-group">
                       <label className="SignLabel" for="exampleInputEmail1">Firstname:</label>
@@ -87,7 +93,7 @@ class SignUp extends Component {
                   <div className="form-group">
                       <label className="SignLabel" for="exampleInputEmail1">Email:</label>
                       {/* <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""/> */}
-                      <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange}/>
+                      <input type="email" className="form-control" name="email" value={email} onChange={this.handleChange}/>
                       {submitted && !email &&
                         <div className="help-block">Email is required</div>
                       }
@@ -101,7 +107,10 @@ class SignUp extends Component {
                       }
                   </div>
                   <div className="SignDivButton">
-                      <button type="submit" className="btn btn-primary SignButton">Register</button>
+                      <button type="submit" className="btn btn-primary SignButton">
+                      {!loading && "Register" }
+                      {loading && <i class="fas fa-spinner fa-spin"></i>}
+                      </button>
                   </div>
                   <small className="SignBottomSmall">
                       Already have an Account? 
