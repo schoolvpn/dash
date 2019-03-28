@@ -14,19 +14,15 @@ class Verify extends Component {
       authCode: ''
     };
   }  
-//     userService.verify(this.authCode)
-//         .then(data => {
-//             this.setState({message: data.message})
-//         },
-//         error => this.setState({error: error})
-//         )
-
-//   }
     componentDidMount () {
         const { authCode } = this.props.match.params
         userService.verify(authCode)
         .then(data => {
             this.setState({message: data.message})
+            setTimeout(function() {
+                const { from } = this.props.location.state || { from: { pathname: "/signin" } };
+                this.props.history.push(from);
+            }.bind(this), 3000)
         })
     }
 
@@ -35,6 +31,7 @@ class Verify extends Component {
     return (
       <div className="AppVerify">
         <h1 className="VerifyText">{message}</h1>
+        <p className="VerifyTextNotice">Redirecting in 3 Seconds</p>
       </div>
     );
   }
