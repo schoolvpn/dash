@@ -6,6 +6,7 @@ import userhome from "../components/user/home";
 import adminhome from "../components/admin/home";
 import adminusers from "../components/admin/users";
 import signup from "../components/signup"
+import verify from "../components/verify"
 import notfound from "../components/error/notfound"
 // import Header from "../header";
 import { PrivateRoute } from "../components/private";
@@ -17,6 +18,7 @@ class ReactRouter extends React.Component {
         <Switch>
           <Redirect exact from='/' to='/signin'/>
           <Route exact path="/signin" component={signin}/>
+          <Route path='/verify/:authCode' component={verify} />
           <PrivateRoute exact path="/user/dashboard" component={userhome}/>
           <PrivateRoute exact path="/admin/dashboard" component={adminhome}/>
           <PrivateRoute exact path="/admin/users" component={adminusers}/>

@@ -118,6 +118,14 @@
   justify-content: center;
 }
 
+/* Verify */
+
+.VerifyText {
+  text-align: center;
+  font-family: slimjoe;
+  color: #E73C7E;
+}
+
 /* General */
 
 input {

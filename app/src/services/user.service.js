@@ -7,7 +7,8 @@ export const userService = {
     logout,
     register,
     adminusers,
-    useraccountedit
+    useraccountedit,
+    verify
     // logout,
     // getAll
 };
@@ -79,7 +80,17 @@ function logout() {
   localStorage.removeItem('Authorization');
 }
 
-
+function verify(authCode) {
+  return axios.post(`https://api.schoolvpn.ca/user/verify/${authCode}`)
+    .then(
+      response => {
+        return response.data
+      }
+    ) 
+    .catch(error => {
+      return Promise.reject(error.response.data.message);
+    });
+}
 
 // function handleResponse(response) {
 //     return response.text().then(text => {
