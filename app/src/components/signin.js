@@ -45,11 +45,11 @@ class SignIn extends Component {
         data => {
           this.setState({ error: false})
           this.setState({ success: true })
-          console.log(data)
+          //console.log(data)
           userService.me()
             .then( 
               data =>{
-                console.log(data)
+                //console.log(data)
                 if (data.role === 'user') {
                   const { from } = this.props.location.state || { from: { pathname: "/user/dashboard" } };
                   this.props.history.push(from);
@@ -109,6 +109,11 @@ class SignIn extends Component {
                       Dont Have a Account? 
                       <Link className="SignLink" to="/signup">Register</Link>
                       Here.
+                  </small>
+                  <small className="SignBottomSmall">
+                      Forgot Your Password?
+                      <Link className="SignLink" to="/reset">Reset</Link>
+                      it Here.
                   </small>
               </form>
           </div>

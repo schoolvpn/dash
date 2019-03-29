@@ -11,7 +11,7 @@ class AdminUsers extends Component {
     };
     userService.adminusers()
       .then(data => {
-        console.log(data)
+        //console.log(data)
         for (var user in data) {
           this.setState({
             users: [...this.state.users,

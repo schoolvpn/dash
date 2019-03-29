@@ -47,7 +47,7 @@ class SignUp extends Component {
         data => {
           this.setState({ error: false })
           this.setState({ success: true })
-          console.log(data)
+          //console.log(data)
           const { from } = this.props.location.state || { from: { pathname: "/signin" } };
           this.props.history.push(from);
         },
@@ -117,59 +117,14 @@ class SignUp extends Component {
                       <Link className="SignLink" to="/signin">Login</Link>
                       Here.
                   </small>
+                  <small className="SignBottomSmall">
+                      Forgot Your Password?
+                      <Link className="SignLink" to="/reset">Reset</Link>
+                      it Here.
+                  </small>
               </form>
           </div>
         </div>
-        {/* <br/>
-        <br/>
-        <div className="col-md-6 col-md-offset-3">
-          {success &&
-            <div className={'alert alert-success'}>Register Success</div>
-          }
-          {error &&
-            <div className={'alert alert-danger'}>{error}</div>
-          }
-          <h2>Signup Page</h2>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="firstname">Firstname:</label>
-              <input type="text" className="form-control" name="firstname" value={firstname} onChange={this.handleChange}/>
-              {submitted && !firstname &&
-                <div className="help-block">Firstname is required</div>
-              }
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="lastname">Lastname:</label>
-              <input type="text" className="form-control" name="lastname" value={lastname} onChange={this.handleChange}/>
-              {submitted && !lastname &&
-                <div className="help-block">Lastname is required</div>
-              }
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="email">Email:</label>
-              <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange}/>
-              {submitted && !email &&
-                <div className="help-block">Email is required</div>
-              }
-            </div>
-            <br/>
-            <div>
-              <label htmlFor="password">Password:</label>
-              <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange}/>
-              {submitted && !password &&
-                <div className="help-block">Password is required</div>
-              }
-            </div>
-            <div className="button">
-              <button className="loginbtn">Register</button>
-            </div>
-          </form>
-          <div className="button">
-            <Link className="buttonalt" to="/login">Login</Link>
-          </div>
-        </div> */}
       </div>
     );
   }

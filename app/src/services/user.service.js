@@ -8,7 +8,9 @@ export const userService = {
     register,
     adminusers,
     useraccountedit,
-    verify
+    verify,
+    reset,
+    resetChange
     // logout,
     // getAll
 };
@@ -92,20 +94,26 @@ function verify(authCode) {
     });
 }
 
-// function handleResponse(response) {
-//     return response.text().then(text => {
-//         const data = text && JSON.parse(text);
-//         if (!response.ok) {
-//             if (response.status === 401) {
-//                 // auto logout if 401 response returned from api
-//                 logout();
-//                 location.reload(true);
-//             }
+function reset(email) {
+  return axios.post(`https://api.schoolvpn.ca/user/password/reset`, {email: email})
+    .then(
+      response => {
+        return response.data
+      }
+    ) 
+    .catch(error => {
+      return Promise.reject(error.response.data.message);
+    });
+}
 
-//             const error = (data && data.message) || response.statusText;
-//             return Promise.reject(error);
-//         }
-
-//         return data;
-//     });
-// }
+function resetChange(resetCode, password) {
+  return axios.post(`https://api.schoolvpn.ca/user/password/reset/${resetCode}`, {password: password})
+    .then(
+      response => {
+        return response.data
+      }
+    ) 
+    .catch(error => {
+      return Promise.reject(error.response.data.message);
+    });
+}

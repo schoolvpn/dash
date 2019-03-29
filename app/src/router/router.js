@@ -8,6 +8,8 @@ import adminusers from "../components/admin/users";
 import signup from "../components/signup"
 import verify from "../components/verify"
 import notfound from "../components/error/notfound"
+import reset from "../components/reset"
+import resetChange from "../components/resetChange"
 // import Header from "../header";
 import { PrivateRoute } from "../components/private";
 
@@ -24,6 +26,8 @@ class ReactRouter extends React.Component {
           <PrivateRoute exact path="/admin/users" component={adminusers}/>
           <PrivateRoute exact path="/user/profile" component={useraccount}/>
           <Route exact path="/signup" component={signup}/>
+          <Route exact path="/reset" component={reset}/>
+          <Route exact path="/reset/:resetCode" component={resetChange}/>
           <Route component={notfound}/>
         </Switch>
       </React.Fragment>
