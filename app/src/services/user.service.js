@@ -82,6 +82,7 @@ function logout() {
   localStorage.removeItem('Authorization');
 }
 
+
 function verify(authCode) {
   return axios.post(`https://api.schoolvpn.ca/user/verify/${authCode}`)
     .then(

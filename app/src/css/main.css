@@ -177,6 +177,11 @@ input:-webkit-autofill {
   font-family: bigjohn;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px
+}
+
 /* 
 .data {
     margin-top: 50px
