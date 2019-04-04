@@ -5,7 +5,7 @@ import { userService } from '../services/user.service';
 import '../css/main.css'
 
 class ResetChange extends Component {
-  constructor () {
+  constructor() {
     super()
 
     userService.logout();
@@ -17,18 +17,17 @@ class ResetChange extends Component {
       loading: false,
       error: '',
       success: false,
-      cpassword: '',
       resetCode: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }  
+  }
 
-  componentDidMount () {
+  componentDidMount() {
     const { resetCode } = this.props.match.params
-    this.setState({resetCode: resetCode})
-}
+    this.setState({ resetCode: resetCode })
+  }
 
   handleChange(e) {
     const { name, value } = e.target;
@@ -53,54 +52,54 @@ class ResetChange extends Component {
     userService.resetChange(resetCode, password)
       .then(
         data => {
-          this.setState({ error: false})
+          this.setState({ error: false })
           this.setState({ success: true })
           this.setState({ message: data.message })
-          this.setState({loading: false})
+          this.setState({ loading: false })
           //console.log(data)
         },
-        error => {this.setState({ error, loading: false })}   
+        error => { this.setState({ error, loading: false }) }
       )
   }
 
   render() {
-    const { cpassword, password, submitted, error, success, loading, message } = this.state;
+    const { password, submitted, error, success, loading, message } = this.state;
     return (
       <div className="AppSign">
         <div className="row SignMain">
           <div className="col SignInLeft">
-              <form onSubmit={this.handleSubmit}>
-                  {success &&
-                    <div className={'alert alert-success'}>{message}</div>
-                  }
-                  {error &&
-                    <div className={'alert alert-danger'}>{error}</div>
-                  }
-                  <h2 className="SignPageTitle">Password Reset</h2>
-                  <div className="form-group">
-                      <label className="SignLabel" for="exampleInputPassword1">New Password:</label>
-                      <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange}/>
-                      {submitted && !password &&
-                        <div className="help-block">Password is required</div>
-                      }
-                      {/* <input type="password" className="form-control" id="exampleInputPassword1" placeholder=""/> */}
-                  </div>
-                  <div className="SignDivButton">
-                    <button type="submit" className="btn btn-primary SignButton">
-                    {!loading && "Reset Password" }
-                    {loading && <i class="fas fa-spinner fa-spin"></i>}
-                    </button>
-                  </div>
-                  <small className="SignBottomSmall">
-                      Know your Password Already? 
+            <form onSubmit={this.handleSubmit}>
+              {success &&
+                <div className={'alert alert-success'}>{message}</div>
+              }
+              {error &&
+                <div className={'alert alert-danger'}>{error}</div>
+              }
+              <h2 className="SignPageTitle">Password Reset</h2>
+              <div className="form-group">
+                <label className="SignLabel" for="exampleInputPassword1">New Password:</label>
+                <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+                {submitted && !password &&
+                  <div className="help-block">New Password is required</div>
+                }
+                {/* <input type="password" className="form-control" id="exampleInputPassword1" placeholder=""/> */}
+              </div>
+              <div className="SignDivButton">
+                <button type="submit" className="btn btn-primary SignButton">
+                  {!loading && "Reset Password"}
+                  {loading && <i class="fas fa-spinner fa-spin"></i>}
+                </button>
+              </div>
+              <small className="SignBottomSmall">
+                Know your Password Already?
                       <Link className="SignLink" to="/signin">Login</Link>
-                      Here.
+                Here.
                   </small>
-              </form>
+            </form>
           </div>
           <div className="col SignInRight">
-              <h1 className="SignMainTitle">
-                  iNcizzle Inc.
+            <h1 className="SignMainTitle">
+              iNcizzle Inc.
               </h1>
           </div>
         </div>
